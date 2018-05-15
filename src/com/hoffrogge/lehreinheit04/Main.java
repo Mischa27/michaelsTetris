@@ -1,6 +1,7 @@
 package com.hoffrogge.lehreinheit04;
 
 import com.hoffrogge.lehreinheit03.Farbe;
+import com.hoffrogge.lehreinheit03.Rechteck;
 
 public class Main {
 
@@ -8,13 +9,21 @@ public class Main {
 
 		Zeichenbrett zeichenbrett = new Zeichenbrett();
 
-		Quadrat rahmen = new Quadrat();
-		rahmen.setLinienFarbe(new Farbe(255, 153, 0));
-		rahmen.setMittelpunkt(400, 400);
-		rahmen.setDurchmesser(798);
+		TetrominoBlock tetrominoBlock = new TetrominoBlock();
+		tetrominoBlock.setLinienFarbe(new Farbe(0, 0, 0));
+		tetrominoBlock.setMittelpunkt(10, 10);
 
-		zeichenbrett.fuegeZeichenbaresObjektHinzu(rahmen);
-
-		zeichenbrett.zeichneAlleZeichenbarenObjekte();
+		zeichenbrett.fuegeZeichenbaresObjektHinzu(tetrominoBlock);
+		
+		
+		Dreieck dreieck = new Dreieck();
+		dreieck.setMittelpunkt(100, 100);
+		dreieck.setDurchmesser(50);
+		
+		
+		zeichenbrett.fuegeZeichenbaresObjektHinzu(dreieck);
+		
+		
+				zeichenbrett.zeichneAlleZeichenbarenObjekte();
 	}
 }

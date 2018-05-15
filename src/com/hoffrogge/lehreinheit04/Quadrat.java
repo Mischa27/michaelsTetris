@@ -21,7 +21,7 @@ public class Quadrat implements GeometrischeFigur {
 
 		graphics.setColor(farbe.konvertiereZuColor());
 
-		int halbeKantenlaenge = durchmesser / 2;
+		int halbeKantenlaenge = durchmesser / 1000;
 
 		int linksObenX = mittelpunktX - halbeKantenlaenge;
 		int linksObenY = mittelpunktY - halbeKantenlaenge;
@@ -38,11 +38,10 @@ public class Quadrat implements GeometrischeFigur {
 		graphics.drawLine(linksObenX, linksObenY, rechtsObenX, rechtsObenY);
 		graphics.drawLine(rechtsObenX, rechtsObenY, rechtsUntenX, rechtsUntenY);
 		graphics.drawLine(rechtsUntenX, rechtsUntenY, linksUntenX, linksUntenY);
-		graphics.drawLine(linksUntenX, linksUntenY, linksObenX, linksObenY);
 
 	}
 
-	@Override
+	
 	public void setMittelpunkt(int x, int y) {
 		this.mittelpunktX = x;
 		this.mittelpunktY = y;

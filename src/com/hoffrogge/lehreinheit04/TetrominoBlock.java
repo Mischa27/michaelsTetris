@@ -9,12 +9,12 @@ public class TetrominoBlock implements GeometrischeFigur {
 	private int mittelpunktX;
 	private int mittelpunktY;
 	private Farbe farbe;
-	int yachse = 50;
-	int xachse = 50;
+	int kantenlänge = 50;
+	private int durchmesser;
 	
 	public TetrominoBlock() {
-		mittelpunktX=10;
-		mittelpunktY=10;
+		mittelpunktX=50;
+		mittelpunktY=50;
 	}
 	
 	@Override
@@ -31,7 +31,7 @@ public class TetrominoBlock implements GeometrischeFigur {
 
 	@Override
 	public void setDurchmesser(int d) {
-		// TODO Auto-generated method stub
+		this.durchmesser = d;
 		
 	}
 
@@ -45,9 +45,32 @@ public class TetrominoBlock implements GeometrischeFigur {
 		
 		graphics.setColor(farbe.konvertiereZuColor());
 		
-		graphics.drawLine(mittelpunktX, mittelpunktY, 50, 10);
-		graphics.drawLine(mittelpunktX, yachse, x2, y2);
+		graphics.drawLine(mittelpunktX, mittelpunktY, mittelpunktX + durchmesser, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser, mittelpunktY, mittelpunktX + durchmesser, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX + durchmesser, mittelpunktY + durchmesser, mittelpunktX, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX, mittelpunktY + durchmesser, mittelpunktX, mittelpunktY);
+		graphics.drawLine(mittelpunktX + 3*durchmesser, mittelpunktY + durchmesser, mittelpunktX + durchmesser, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX + 3*durchmesser, mittelpunktY, mittelpunktX + durchmesser, mittelpunktY);
+		graphics.drawLine(mittelpunktX + 2*durchmesser, mittelpunktY, mittelpunktX + 2*durchmesser, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX + 3*durchmesser, mittelpunktY, mittelpunktX + 3*durchmesser, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX, mittelpunktY + durchmesser, mittelpunktX, mittelpunktY + 2*durchmesser);
+		graphics.drawLine(mittelpunktX + durchmesser, mittelpunktY + durchmesser, mittelpunktX + durchmesser, mittelpunktY + 2*durchmesser);
+		graphics.drawLine(mittelpunktX, mittelpunktY + 2*durchmesser, mittelpunktX + durchmesser, mittelpunktY + 2*durchmesser);
 		
+		graphics.drawLine(mittelpunktX + durchmesser*4, mittelpunktY, mittelpunktX + durchmesser*6, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*5, mittelpunktY + durchmesser*2, mittelpunktX + durchmesser*5, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*4, mittelpunktY + durchmesser*2, mittelpunktX + durchmesser*6, mittelpunktY + durchmesser*2);
+		graphics.drawLine(mittelpunktX + durchmesser*4, mittelpunktY + durchmesser, mittelpunktX + durchmesser*6, mittelpunktY + durchmesser);
+		graphics.drawLine(mittelpunktX + durchmesser*4, mittelpunktY + durchmesser*2, mittelpunktX + durchmesser*4, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*6, mittelpunktY + durchmesser*2, mittelpunktX + durchmesser*6, mittelpunktY);
+		
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY, mittelpunktX + durchmesser*8, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY + durchmesser*4, mittelpunktX + durchmesser*7, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*8, mittelpunktY + durchmesser*4, mittelpunktX + durchmesser*8, mittelpunktY);
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY + durchmesser*3, mittelpunktX + durchmesser*8, mittelpunktY + durchmesser*3);
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY + durchmesser*2, mittelpunktX + durchmesser*8, mittelpunktY + durchmesser*2);
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY + durchmesser*1, mittelpunktX + durchmesser*8, mittelpunktY + durchmesser*1);
+		graphics.drawLine(mittelpunktX + durchmesser*7, mittelpunktY + durchmesser*4, mittelpunktX + durchmesser*8, mittelpunktY + durchmesser*4);
 	}
 
 }
